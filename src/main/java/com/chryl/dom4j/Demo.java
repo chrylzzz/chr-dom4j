@@ -19,10 +19,10 @@ public class Demo {
         /*
          <?xml version="1.0"?>
          <result>
-         <interpretation grammar="builtin:grammar/boolean?language=zh-CN;y=1;n=2 builtin" confidence="1.0">
-         <instance>广西</instance>
-         <input mode="speech">广西</input>
-         </interpretation>
+             <interpretation grammar="builtin:grammar/boolean?language=zh-CN;y=1;n=2 builtin" confidence="1.0">
+             <instance>广西</instance>
+             <input mode="speech">广西</input>
+             </interpretation>
          </result>
          */
         String str = "<?xml version=\\\"1.0\\\"?>\\n<result>\\n <interpretation grammar=\\\"builtin:grammar/boolean?language=zh-CN;y=1;n=2 builtin\\\" confidence=\\\"1.0\\\">\\n    <instance>广西</instance>\\n    <input mode=\\\"speech\\\">广西</input>\\n  </interpretation>\\n</result>";
@@ -34,6 +34,7 @@ public class Demo {
 //        在dom4j的API中， xml文件下的所有节点都是elment，无论是跟节点还是子元素节点
         Element root = document.getRootElement();  //获取根节点，即DATA
         List<Element> elements = root.elements();  //   //获取根节点下的所有子元素  ，即所有的ENTITY
+
         // 遍历所有子元素，即遍历出单个的一个个ENTITY
         for (Element element : elements) {
 //            遍历出每个ENTITY里面的子元素，.getTextTrim()-- - 这个方法是得到元素的内容，将他们放到list中
